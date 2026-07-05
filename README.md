@@ -10,6 +10,8 @@ The pipeline is split into three automated steps:
    - **Pattern Generalization (BFS)**: For each unique target move, it groups all base states leading to that move and performs a Breadth-First Search. This incrementally generalizes the states using partial wildcards. A generalized pattern is considered valid only if it does not accidentally match any board state associated with a different target move.
    - **Exact Set Cover (Minimization)**: Using the `pulp` library, the problem is modeled as an Integer Linear Program (ILP). It solves an exact Set Cover problem to find the absolute minimum number of valid generalized patterns required to cover all original base states. It uses a slight penalty in the objective function to favor broader wildcards over narrower ones when breaking ties.
    
+     *(Note: The Exact Set Cover problem is notoriously "NP-hard". Even though Tic Tac Toe is a relatively simple game, executing this minimization step can take a few minutes. If anyone has a better or more efficient solution for this exact minimization, feel free to let me know!)*
+   
    To maximize compression, it introduces the following wildcards:
    - `?` : Matches any state ('X', 'O', or ' ')
    - `!` : Matches not 'O' ('X' or ' ')
