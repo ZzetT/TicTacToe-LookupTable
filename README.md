@@ -1,6 +1,6 @@
 # TicTacToe LookupTable (for 'O')
 
-This repository consists of Python scripts to calculate, compress, and verify the optimal lookup table for the 2nd player ('O') of Tic Tac Toe, which plays a perfect game (i.e., never loses). Only reachable states are considered (i.e., the lookup table is only applicable if you played the game according to the lookup table; you cannot use it to find the best move for an arbitrary impossible board state).
+This repository consists of Python scripts to calculate, compress, and verify the optimal lookup table for the 2nd player ('O') of Tic Tac Toe, which plays a perfect game (i.e., never loses). Only reachable states are considered (i.e., the lookup table is only applicable if you played the game according to the lookup table; you cannot use it to find the best move for an arbitrary board state).
 
 The pipeline is split into three automated steps:
 
